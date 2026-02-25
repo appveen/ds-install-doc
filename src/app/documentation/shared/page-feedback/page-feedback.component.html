@@ -1,0 +1,18 @@
+<div class="page-footer">
+  <div class="metadata">
+    <p class="last-updated" *ngIf="lastUpdated">Last updated: {{lastUpdated | date:'mediumDate'}}</p>
+  </div>
+
+  <div class="feedback-section">
+    <p>Did this page help you?</p>
+    <div class="feedback-buttons">
+      <button class="btn-feedback" (click)="onYesClick()">👍 Yes</button>
+      <button class="btn-feedback" (click)="onNoClick()">👎 No</button>
+    </div>
+    <ng-container *ngIf="showThanks">
+      <div class="message-container" [class.party-animation]="isParty">
+        {{feedbackMessage}}
+      </div>
+    </ng-container>
+  </div>
+</div>
